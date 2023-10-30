@@ -1,0 +1,34 @@
+project:
+  type: website
+  output-dir: docs
+website:
+  title: "MyDataRules (MyDR)"
+  reader-mode: true
+  google-analytics: "G-MB64NTVJTB"
+  open-graph:
+    site-name: MyDataRules
+  navbar:
+    background: "#f3f4f5"
+    right:
+      - index_b.qmd
+      - text: "Me"
+        file: index.qmd
+      - research.qmd
+      - icon: github
+        href: https://github.com/
+  #    - icon: twitter
+  #      href: https://twitter.com
+  page-footer:
+    left: "Copyright 2023, Maria Prokofieva"
+    right:
+      - icon: github
+        href: https://github.com/maria-pro
+      - icon: linkedin
+        href: https://www.linkedin.com/in/mariapr/
+    background: "#f3f4f5"
+format:
+  html:
+    theme: litera
+
+
+

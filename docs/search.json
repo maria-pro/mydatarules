@@ -1,0 +1,72 @@
+[
+  {
+    "objectID": "research.html",
+    "href": "research.html",
+    "title": "Research",
+    "section": "",
+    "text": "Academics should not live in the ivory tower\nCheck my Google Scholar"
+  },
+  {
+    "objectID": "posts/post-with-code/index.html",
+    "href": "posts/post-with-code/index.html",
+    "title": "Post With Code",
+    "section": "",
+    "text": "This is a post with executable code.\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "posts/welcome/index.html",
+    "href": "posts/welcome/index.html",
+    "title": "Welcome",
+    "section": "",
+    "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
+  },
+  {
+    "objectID": "posts2/post-with-code/index.html",
+    "href": "posts2/post-with-code/index.html",
+    "title": "Post With Code",
+    "section": "",
+    "text": "This is a post with executable code.\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "posts2/welcome/index.html",
+    "href": "posts2/welcome/index.html",
+    "title": "Welcome To My Blog",
+    "section": "",
+    "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "MyDataRules (MyDR)",
+    "section": "",
+    "text": "Welcome to my page.\nI am a data scientist with R and Python under my belt. I love both data wrangling and ML. What else an ML engineer can say.\nBy coincidence I am an academic, so this website is my personal project where I share some of my leasure projects.\nOPEN FOR HIRE"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "CV",
+    "section": "",
+    "text": "About this blog"
+  },
+  {
+    "objectID": "Untitled.html",
+    "href": "Untitled.html",
+    "title": "Untitled",
+    "section": "",
+    "text": "Fruit prices {.striped .hover}\n\n\nfruit\nprice\n\n\n\n\napple\n2.05\n\n\npear\n1.37\n\n\norange\n3.09"
+  },
+  {
+    "objectID": "index_b.html",
+    "href": "index_b.html",
+    "title": "What’s new",
+    "section": "",
+    "text": "Post With Code\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nOct 27, 2023\n\n\nHarlow Malloc\n\n\n\n\n\n\n  \n\n\n\n\nWelcome\n\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nOct 24, 2023\n\n\nTristan O’Malley\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "blog.html",
+    "href": "blog.html",
+    "title": "Blog-listing",
+    "section": "",
+    "text": "Welcome\n\n\n\n\n\n\n\n\n\n\n\n\nOct 24, 2023\n\n\nTristan O’Malley\n\n\n\n\n\n\n  \n\n\n\n\nPost With Code\n\n\n\n\n\n\n\n\n\n\n\n\nOct 27, 2023\n\n\nHarlow Malloc\n\n\n\n\n\n\nNo matching items"
+  }
+]
