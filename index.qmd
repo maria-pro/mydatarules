@@ -13,6 +13,16 @@ Welcome to my page.
 
 I am a data scientist with R and Python under my belt. I love both data wrangling and ML. What else an ML engineer can say.
 
-By coincidence I am an academic, so this website is my personal project where I share some of my leasure projects.
+By coincidence I am an ML engineer and academic, so this website is my personal project where I share some of my leisure projects and some snippets of my work project
 
-OPEN FOR HIRE
+I work with clients across the whole domain of data science, starting with 
+
+- automated data collection - data wrangling - data storytelling 
+
+- to model building and implementation
+
+I am Fellow CPA Australia member and promote the use of data and data tools for business purposes.
+
+Talk to me if you need advice or guidance and 
+
+**OPEN FOR HIRE**
