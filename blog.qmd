@@ -1,9 +1,0 @@
----
-title: "Blog-listing"
-listing:
-  contents: posts
-  sort: "date"
-  image-placeholder: "img/default.jpeg"
-  image-align: right
-  image-height: 100px
----
