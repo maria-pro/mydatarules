@@ -1,0 +1,252 @@
+---
+title: "Cash flow - reconciliation"
+author: "Maria Prokofieva"
+date: "2023-10-30"
+categories: [business]
+title-block-banner: false
+execute:
+  echo: true
+  warning: false
+---
+
+```{r, echo=FALSE}
+library(tidyverse)
+library(janitor)
+library(lubridate)
+library(patchwork)
+library(ggtext)
+theme_set(theme_minimal())
+options(scipen = 100)
+
+```
+
+## Cash flows - bank reconciliation
+
+I continue with the series for "nerdy" accountants who want to diverge from Excel and master the power and beauty of R automation - and we are looking at one of the most important areas of ANY business! Cash!
+
+Cash management is a really critical issue for both business owners and people like me who are trying not to look at recent interest rates jumps.
+
+Cash management includes cash collection, handling, and usage of cash (spending!). It is essential to have **enough** cash to cover immediate expenses, fund business growth and have working capital. Or in simple terms, you need to have enough cash to pay for your coffee, cover your morgage repayment and invest in that [Tesla Model 3](https://www.tesla.com/en_au/model3)
+
+![](img/tesla.jpg)
+
+Cash analysis is an important step to assess companies short-term liquidity, evaluate working capital and make decisions about investments.
+
+Today, we are going to have a look at the step that comes before cash flow visualization. Much much earlier.... Before we are able to put cash flow items on a nice graph, we need to obtain those cash flow items "somehow".
+
+Accountants don't have cash flow data by default, and there is no magic way to get it. Rather, it is necessary to go transaction by transaction, classify items, group them, collate them, and double-check that they actually occurred! We need to make sure that we are not double-charged as well as we are not underpaying or omitting any of our payments and they are all included in the list.
+
+We start backwards from this very list and we dig into doing bank reconciliation and in particular, looking at our (business) bank statement. This is indeed a very useful exercise, not only in regards to your business but also for your own expense management.
+
+For this post, we will work through a very simple example, just looking at a bank statement and poking around. It is a "personal" bank statement that comes from [Kaggle](https://www.kaggle.com/datasets/sandhaya4u/august-bank-statement-sandhaya)
+
+
+```{r}
+cf<-read_csv("data/bank_st.csv")
+
+cf%>%head()
+```
+This is a typical bank statement you can view in your bank account where each row is a transaction for a particular reporting period (e.g. month). We do not have the name of the second party  for the transactions (e.g. the name of the store or the company that credited/debited the account), but all transactions have been classified - which can be seen under `Category`.
+
+The dataset has `Debit Amount`, which is when you were charged, and `Credit Amount`, which is when you were paid. The `Closing Balance` is a running balance that shows the amount of cash in your account after the transaction. The most important parts of that `Closing Balance` are the initial and final numbers and they are used to reconcial (= match) balances in your own "books" (accounting books!= accounting records). If those number do not match, we investigate individual closing balances for the transactions to identify where we were overpaid or underpaid.
+
+Let's look closer at the data: it is not messy, but not ideal...
+
+Column names have blanks and they do not play well in functions, so let's use `clean_names()` from `janitor` package to make them more R friendly
+
+```{r}
+cf<-cf%>%
+  clean_names()
+
+cf%>%head()
+```
+
+That's better! so now all variables are in small letters and have snake_case!
+
+```{r}
+names(cf)
+```
+
+Let's explore the data and do some simple **counting** - yes, we love to count!
+
+First, what is the closing balance and how it changes during the month
+
+But before we do so, let's have a close look at the `date` column. In the first twenty rows you cans see there are a few issues as some dates include single vs double for days and two-digit vs four-digit for year. It is also in a string format.
+
+
+```{r}
+class(cf$date)
+cf$date[1:20]
+```
+
+To fix this, let's convert to the date type and fix the formating with `lubridate` package
+
+```{r}
+cf$date<-dmy(cf$date)
+```
+
+Now, let's see the spend per each billing date. We exclude the days with no spend:
+
+```{r}
+cf%>%
+  group_by(date)%>%
+  summarise(spend=sum(debit_amount))%>%
+  filter(spend!=0)%>%
+  ggplot(aes(date, spend))+
+  geom_line()
+```
+
+
+Now, let's see type of categories we have
+
+```{r}
+cf%>%count(category, sort=TRUE)
+```
+
+This `None` category does not look right.... What is it there...
+
+```{r}
+cf%>% filter(category=="None")%>%
+  head()
+```  
+It looks like the majority of these entries are not really transactions, but a closing balance. Do we need to include them? Probably not. Let's confirm that they are not transactions and have `debit_amount` and `credit_amount` as zero
+
+```{r}
+cf%>% filter(category=="None")%>%
+  filter(debit_amount!=0 | credit_amount!=0)
+```
+
+and it is a good idea to exclude them
+
+```{r}
+cf<-cf%>%filter(category!="None")
+```
+
+Let's see which day has the most number of transactions and which category is the most used one (what is the money drainer!):
+
+```{r}
+cf%>%count(day, sort=TRUE)
+
+cf%>%count(category, sort=TRUE)
+
+```
+
+Well, good, but does not look nice.. So let's "paint it". (We look at spending where credited amount is $0 per category.)
+
+```{r, echo=FALSE}
+plot1<-cf%>%
+  count(category) %>% 
+  ggplot(aes(x=fct_reorder(category, desc(n)), n)) + 
+  geom_col()+ 
+  labs(x = "Categories", y = "Number of transactions",
+ title ="Cash across categories")+
+  theme(
+  # Hide panel borders and remove grid lines
+  panel.border = element_blank(),
+  panel.grid.major = element_blank(),
+  panel.grid.minor = element_blank(),
+  # Change axis line
+  axis.line = element_line(colour = "black"),  
+  axis.text.x = element_text(angle = 90),
+ plot.title = element_textbox(hjust = 0.5,
+                                 width = unit(0.5, "npc"),
+                                 margin = margin(b = 15))
+  )
+
+plot2<-cf%>%
+  count(day) %>% 
+  ggplot(aes(x=fct_reorder(day, desc(n)), n)) + 
+  geom_col()+ 
+  labs(x = "Categories", y = "Number of transactions",
+title ="Cash across days of the week")+
+  theme(
+  panel.border = element_blank(),
+  panel.grid.major = element_blank(),
+  panel.grid.minor = element_blank(),
+  axis.line = element_line(colour = "black"),
+  axis.text.x = element_text(angle = 90),
+plot.title = element_textbox(hjust = 0.5,
+                                 width = unit(0.5, "npc"),
+                                 margin = margin(b = 15))
+  )
+
+plot3<-cf%>%filter(credit_amount==0)%>%
+  group_by(category)%>%
+  summarise(category_spend=sum(debit_amount),
+            n=n())%>%
+  ggplot(aes(x=fct_reorder(category, desc(category_spend)),
+             y=category_spend))+
+  geom_col()+ 
+  labs(x = "Categories", y = "$ value",
+title ="Cash across categories")+
+  theme(
+  panel.border = element_blank(),
+  panel.grid.major = element_blank(),
+  panel.grid.minor = element_blank(),
+  axis.line = element_line(colour = "black"),
+  axis.text.x = element_text(angle = 90),
+plot.title = element_textbox(hjust = 0.5,
+                                 width = unit(0.5, "npc"),
+                                 margin = margin(b = 15))
+  )
+``` 
+
+```{r}
+plot4<-cf%>%filter(credit_amount==0)%>%
+  group_by(day)%>%
+  summarise(day_spend=sum(debit_amount),
+            n=n())%>%
+  ggplot(aes(x=fct_reorder(day, desc(day_spend)),
+             y=day_spend))+
+  geom_col()+ 
+  labs(x = "Days", y = "$ value",
+title ="Cash across days")+
+  theme(
+  panel.border = element_blank(),
+  panel.grid.major = element_blank(),
+  panel.grid.minor = element_blank(),
+  axis.line = element_line(colour = "black"),
+  axis.text.x = element_text(angle = 90),
+plot.title = element_textbox(hjust = 0.5,
+                                 width = unit(0.5, "npc"),
+                                 margin = margin(b = 15))  )
+
+(plot1|plot2)/(plot3|plot4)
+```
+
+For a real business, this amount of Saturday transactions would raise a red flag, but - this data is from personal records, so looks like someone is having a blast off after a busy week :)
+
+Also, with `category` that `None` does not sound right.... it is the second highest so... I would really investigate what sort of `None` is that `None`...
+
+Well, what are out total earn and which days we are paid and what for?
+
+```{r}
+cf%>%filter(credit_amount>0)%>%
+  count(category)
+```
+
+It looks like we have only two major category - interest and salary. Let's see what brings more money
+
+```{r}
+cf%>%filter(credit_amount>0)%>%
+  group_by(category)%>%
+  summarise(category_total=sum(credit_amount))
+```
+Well, it is still salary! but would be sooo good if it is our passive income that drives the cash flows!
+
+Let's see the balance for the month...
+
+```{r}
+balance<-sum(cf$credit_amount)-sum(cf$debit_amount)
+
+balance
+```
+
+Woohoo! Our balance is positive, so we managed to grow our wealth!
+
+Indeed, it is a very simple example, but a good foundation to start your R experience in accounting!
+....
+
+## References
+
+https://www.kaggle.com/datasets/sandhaya4u/august-bank-statement-sandhaya
