@@ -1,0 +1,194 @@
+---
+title: "Fitbit in your Google Sheets in 5 min or less"
+author: "Maria Prokofieva"
+date: "2023-10-30"
+categories: [data]
+title-block-banner: false
+execute:
+  echo: true
+  warning: false
+---
+
+![](intro.webp){fig-align="center" width="300"}
+
+We all want to be healthy (and wealthy!) and wearable devices is a popular answer to track your fitness level or check how close (or .. well.. not that close) to your fitness goals. Fitbit has been quite popular and used more than by 37 million only active users who use their device at least once a week, according to this [Statista](https://www.statista.com/statistics/472600/fitbit-active-users/#:~:text=Fitbit%20%2D%20number%20of%20active%20users%202012%2D2022&text=In%202022%2C%20there%20were%2037,at%20least%20once%20a%20week.&text=The%20health%20and%20fitness%20wearable,vendors%20in%20this%20particular%20niche.) report.
+
+so why not take a closer look at it? in your [Google Sheets](https://www.google.com/sheets/about/)!
+
+Downloading your data straight to Google Sheets is an awesome idea as you can:
+
+analyse your data yourself, especially, if you have a particular fitness goal in mind (e.g. sleep for 8 hours on average, run a marathon each week, you name it!) share your data with someone (e.g. your doctor, your fitness trainer, your kid --- YES, show them!) or you are just a control freak and what to make sure it's YOURS. And Google Sheets makes it as convenient as possible --- and as quick as possible, bet you --- 5 minutes! (well, it's telling me it's 6 min reading time, so don't count your reading time, pls!)
+
+So, let's dig it --- well it is a mild dig, so no rollup sleeves, pls :)
+
+------------------------------------------------------------------------
+
+What we need:
+
+[Google Account](https://www.google.com/account/about/) (with Google Sheets)
+
+Fitbit with data and [Fitbit account](https://www.fitbit.com/)
+
+... and 5 minutes of your time. The MOST HARD to get from the list!
+
+**The result:**
+
+Google Sheets with your Fitbit data and ability to synchronise it with time
+
+## ![](2.webp)So let's do it!
+
+We will need work with your Google Sheets and your Fitbit developer account so have both handy open in two separate screens
+
+**Google Sheets side**: Go to Google Sheets and create a new file there
+
+![](1.webp)
+
+Go to **Extensions** in the menu and click on **Apps Script**
+
+![](4.webp)
+
+We are going to use [GoogleFitbit extension by JKybett](https://github.com/JKybett/GoogleFitBit)
+
+It's "approved" by Fitbit and is listed under their page [here](https://dev.fitbit.com/build/reference/web-api/developer-guide/libraries-and-sample-code/) --- you will not get "hacked"
+
+Now, you need to click on this link and copy all code from [here](https://github.com/JKybett/GoogleFitBit/blob/main/FitBit.gs).
+
+![](5.webp){width="562"}
+
+and click on the **Save** icon (little disk there on top!)
+
+Click on Libraries + on the left hand side to see this pop-up window
+
+![](6.webp){width="350"}
+
+and search for THIS id below:
+
+**1B7FSrk5Zi6L1rSxxTDgDEUsPzlukDsi4KGuTMorsTQHhGBzBkMun4iDF**
+
+(if you don\'t trust me --- check the link i provided earlier for the code!)
+
+![](7.webp){width="400"}
+
+**Version**: select the latest (i.e. the bigger number! which is currently 43).
+
+**Identifier**: keep as is!
+
+Click **Add** and close the window
+
+Go back to your Google Sheets page and REFRESH! this is really important!
+
+You will need to wait a few seconds (yeahhhh... veeeeeery looooong) and you will see **Fitbit** option in the menu
+
+![](8.webp){width="400"}
+
+Now, we need to actually set it up! so click on **Fitbit** and then **Setup**
+
+![](9.webp){width="400"}
+
+It is most likely going to ask your permission to run the script we setup --- so **Continue**
+
+![](10.webp){width="400"}
+
+and you will need to provide your email for Fitbit and probably it is going to warn you again:
+
+![](11.webp){width="400"}
+
+and you click on **Go to Fitbit (unsafe)**
+
+and then we allow **Fitbit** to access our Google account, since we are going to pour its data to our Google Sheets
+
+![](12.webp){width="350"}
+
+Once it\'s done --- you refresh your Google Sheets page again and select Fitbit\>Setup (again) to see this
+
+![](13.webp){width="350"}
+
+What you need to from this screen is the **Redirect URL** which you need to copy and paste (for your reference for now!) to be used 5 sec later when you go to..
+
+**2. Fitbit side:**
+
+Go to Fitbit [DEVELOPER website](https://dev.fitbit.com/). This is NOT your Fitbit account at <https://www.fitbit.com/>
+
+You need <https://dev.fitbit.com/>
+
+Go to Manage\>Register An App (see here)
+
+![](14.webp){width="350"}
+
+and provide some details, but some of those entries can be what-ever-you-want (blurred on the screenshot), but others --- you need to provide specific information (highlighted in RED).
+
+![](15.webp){width="350"}
+
+For those entries with **UR**L at the end --- don\'t stress! you do not need your personal website. Remember, you are doing this for your OWN data!
+
+**Application Name \*:** give it a name you like
+
+**Description \*:** and description you like
+
+**Application Website URL \*:** this needs to start with **http://** but then you can include ANYTHING (it may not be the real website for our purposes)
+
+**Organization \*:** whatever-you-like
+
+**Organization Website URL \*:** start with **http://** and then anything (e.g. http://google.com)
+
+**Terms of Service URL \*:** same as for the above: start with **http://** and then anything
+
+**Privacy Policy URL \*:** same!
+
+**OAuth 2.0 Application Type \*:** select **Personal**
+
+**Redirect URL \*:** paste the code you were provided in Google Sheets !**THIS IS REALLY IMPORTANT!**
+
+**Default Access Type \*:** select **Read & Write**
+
+Don\'t forget to put a checkbox in \"I have read and agree to the [terms of service](http://dev.fitbit.com/terms)\"
+
+After registering your app, you can access it and edit under \"Manage my app\" tab.
+
+![](16.webp){width="350"}
+
+whooohoo! we are getting close!
+
+From the app page you need to note two codes:
+
+**OAuth 2.0 Client ID**
+
+**Client Secret**
+
+We will use them in our Google Sheets
+
+![](17.webp){width="350"}
+
+So back there!
+
+**Google Sheets (again)**
+
+the next setup step is to enter the details of the freshly registered Fitbit app here (promise --- we are nearly done!)
+
+![](18.webp){width="350"}
+
+and hit Submit!
+
+THIS. IS. IT!
+
+You quickly authorise your app one more time and...
+
+MAGIC!
+
+SEE THIS
+
+your Google Sheets will be quickly populated with the dates and data you requested!
+
+![](19.webp){width="400"}
+
+as you can see --- you can
+
+-   reset it (with your new details)
+
+-   sync to get today\'s data
+
+-   or get your Custom dates!
+
+Enjoy! you are the champ!
+
+![](20.webp){width="400"}
