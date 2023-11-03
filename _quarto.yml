@@ -3,7 +3,7 @@ project:
   output-dir: docs
 website:
   title: "MyDataRules (MyDR)"
-  reader-mode: true
+  reader-mode: false
   favicon: favicon-16x16.png
   google-analytics: "G-MB64NTVJTB"
   open-graph:
@@ -15,19 +15,21 @@ website:
       - text: "Me"
         file: index.qmd
       - research.qmd
+      - text: "Meetup"
+        href: https://www.meetup.com/r-business/
       - icon: github
         href: https://github.com/
-      - icon: meetup
-        href: https://github.com/
-  #    - icon: twitter
-  #      href: https://twitter.com
+      - icon: twitter
+        href: https://twitter.com/m45hap
   page-footer:
     left: "Copyright 2023, Maria Prokofieva"
     right:
+      - text: "Meetup"
+        href: https://www.meetup.com/r-business/
       - icon: github
-        href: https://github.com/maria-pro
-      - icon: linkedin
-        href: https://www.linkedin.com/in/mariapr/
+        href: https://github.com/
+      - icon: twitter
+        href: https://twitter.com/m45hap
     background: "#f3f4f5"
 format:
   html:
