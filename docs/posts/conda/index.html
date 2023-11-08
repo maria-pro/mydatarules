@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Maria Prokofieva">
-<meta name="dcterms.date" content="2023-10-24">
+<meta name="dcterms.date" content="2023-11-09">
 
-<title>MyDataRules (MyDR) - Welcome</title>
+<title>MyDataRules (MyDR) - Python’s Conda Jungle: a no-brainer from Anaconda to Miniforge</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -72,7 +72,7 @@ gtag('config', 'G-MB64NTVJTB', { 'anonymize_ip': true});
 </script>
 
 
-<meta property="og:title" content="MyDataRules (MyDR) - Welcome">
+<meta property="og:title" content="MyDataRules (MyDR) - Python’s Conda Jungle: a no-brainer from Anaconda to Miniforge">
 <meta property="og:description" content="">
 <meta property="og:site-name" content="MyDataRules">
 </head>
@@ -135,9 +135,9 @@ gtag('config', 'G-MB64NTVJTB', { 'anonymize_ip': true});
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Welcome</h1>
+<h1 class="title">Python’s Conda Jungle: a no-brainer from Anaconda to Miniforge</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">news</div>
+    <div class="quarto-category">python</div>
   </div>
   </div>
 
@@ -155,7 +155,7 @@ gtag('config', 'G-MB64NTVJTB', { 'anonymize_ip': true});
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">October 24, 2023</p>
+      <p class="date">November 9, 2023</p>
     </div>
   </div>
   
@@ -165,14 +165,147 @@ gtag('config', 'G-MB64NTVJTB', { 'anonymize_ip': true});
 
 </header>
 
-<p>Let’s get out of the ivory tower and get busy.</p>
+<p>If you are starting with Python you are most likely have a question: should I go straight and just install/use Python or do I need anything else?</p>
+<p>Or likely that you started your journey with Anaconda all-in-one release being promoted as the “World’s Most Popular Data Science Platform” (well, by Anaconda themselves).</p>
+<p>Or you may came across some tutorials that refer to mysterious “conda”. So. Do you need it? Why? Which? Fortunately, not “how much” - its free!</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="img.jpeg" class="img-fluid figure-img" width="200"></p>
+<p><img src="img/1_0.jpeg" class="img-fluid figure-img" alt="Conda selection for Python" width="400"></p>
+</figure>
+</div>
+<p><strong>Conda</strong> typically refers to the package and environment manager, while “Anaconda” and “Miniconda” are distribution options. “Package and environment manager” means what it means: “manages your packages” and “manages your environments”.</p>
+<p>Lets do the “package manager” part first: you need a package manager to helps you find, install, update, and remove software packages, libraries, or <em>dependencies</em> in a consistent and controlled manner. This ensures that your software projects have access to the required components and that different projects don’t interfere with each other.</p>
+<p><strong>Example</strong>:</p>
+<p>We have a freshly installed Python and we want to do some simple ml wrangling. We need to have <code>scikit-learn</code> package. So we go to trusty terminal and <code>pip</code></p>
+<p><code>pip install scikit-learn</code></p>
+<p>just to discover (hopefully with no really big time wasted) that it’s not gonna work and we also need another package,</p>
+<p><code>pip install numpy</code></p>
+<p>With conda, you just nail it with one line:</p>
+<p><code>conda install scikit-learn</code></p>
+<p>Enjoy!</p>
+<p>Now, the environment management part is that it’s a good practice to work in <code>environment</code> - think of your cosy nook where you know everything, adjust everything (e.g.&nbsp;put all your comfort teddies around, aroma candles :)) and just WORK.</p>
+<p>In a more computer manner that “cosy nook” is your envirnoment, or “virtual environments”, or “conda environments.” These environments are separate from the system-wide environment and from each other. This isolation helps you keep your projects self-contained and free from possible conflicts, like conflict between different version of python or packages. Think about that as an ultimate manifestation of “work-life” balance “:) put your”life” and “work into separate environments :)</p>
+<p>Conda help you create isolated environments for different projects, help you organise your projects. This is particularly valuable in data science, scientific computing, and software development, where complex and interdependent libraries and dependencies are common. You can specify the exact versions of packages and dependencies to use in each environment, making it easier to reproduce your work and share it with others.</p>
+<p>Best of all, once you have your “cosy nook” environment, you can easily export it with conda as well:</p>
+<p><code>conda env export &gt; environment.yml</code></p>
+<p>and use it later.</p>
+<p>So now you are sold on condas, let’s get the right conda for you.</p>
+<hr>
+<section id="anaconda-the-comprehensive-toolbox" class="level3">
+<h3 class="anchored" data-anchor-id="anaconda-the-comprehensive-toolbox">Anaconda: The Comprehensive Toolbox</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/2.png" class="img-fluid figure-img" alt="Anaconda: The Comprehensive Toolbox" width="400"></p>
+</figure>
+</div>
+<p>When to Use Anaconda:</p>
+<p>Anaconda is your go-to choice if you’re seeking an all-in-one data science platform. It bundles together Conda, Python, and an extensive collection of pre-built data science libraries and tools. It’s an ideal solution for data scientists, researchers, and analysts who want a hassle-free, ready-to-use environment for their work.</p>
+<section id="installation" class="level4">
+<h4 class="anchored" data-anchor-id="installation">Installation:</h4>
+<p>Download Anaconda from the <a href="https://www.anaconda.com/">official website</a> and install it.</p>
+</section>
+<section id="why-anaconda" class="level4">
+<h4 class="anchored" data-anchor-id="why-anaconda">Why Anaconda?</h4>
+<ul>
+<li>Ginny in a bottle (but big bottle…):</li>
+</ul>
+<p><strong>Pre-packaged Libraries</strong>: Anaconda comes with hundreds of pre-installed libraries, including <code>NumPy</code>, <code>pandas</code>, <code>scikit-learn</code>, <code>Jupyter</code>, and more, saving you the effort of installing them individually.</p>
+<p><strong>Easy Environment Management</strong>: Create isolated environments for different projects with specific dependencies, ensuring reproducibility.</p>
+<p>Available for Windows, macOS, and Linux.</p>
+</section>
+<section id="beware" class="level4">
+<h4 class="anchored" data-anchor-id="beware">Beware:</h4>
+<p>The gift of Anaconda comes with a big box of “commitments”, a large installation size, eating your resources and coming with lots of other software that you probably never need….</p>
+<hr>
+</section>
+</section>
+<section id="miniconda-size-does-not-matter-when-it-comes-to-strength" class="level3">
+<h3 class="anchored" data-anchor-id="miniconda-size-does-not-matter-when-it-comes-to-strength">Miniconda: Size does not matter when it comes to strength</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/3.png" class="img-fluid figure-img" alt="Miniconda: Size does not matter" width="400"></p>
+</figure>
+</div>
+<p>Miniconda is a minimal Conda installer that allows you to build a customized environment tailored to your specific requirements. It’s the same ginny but in a IKEA packaging :)</p>
+<section id="why-miniconda" class="level4">
+<h4 class="anchored" data-anchor-id="why-miniconda">Why Miniconda:</h4>
+<p>Perfect for users who want more control over their environment and prefer a lightweight footprint. It goes straight to the minimalist soul :)</p>
+</section>
+<section id="installation-1" class="level4">
+<h4 class="anchored" data-anchor-id="installation-1">Installation:</h4>
+<p>Download Miniconda from the <a href="https://docs.conda.io/projects/miniconda/en/latest/miniconda-install.html">official website</a> and install it. After installation, use Conda to create a new environment and install packages as needed.</p>
+</section>
+<section id="why-miniconda-1" class="level4">
+<h4 class="anchored" data-anchor-id="why-miniconda-1">Why Miniconda?</h4>
+<p><strong>Small, but mighty</strong>: Miniconda is a lean installer, allowing you to install only what you need.</p>
+<p><strong>Control freak yourself!</strong>: Build environments with precisely the packages you require, keeping your system free from unnecessary clutter.</p>
+<p><strong>Quicky</strong>: fast to install, making it a great choice for rapid environment configuration.</p>
+</section>
+<section id="beware-1" class="level4">
+<h4 class="anchored" data-anchor-id="beware-1">Beware:</h4>
+<p><strong>Let’s get dirty</strong>: You’ll need to set up environments and install packages manually, which may require more initial effort.</p>
+<hr>
+</section>
+</section>
+<section id="conda-forge-peoples-princess" class="level3">
+<h3 class="anchored" data-anchor-id="conda-forge-peoples-princess">Conda-Forge: people’s princess</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/4.png" class="img-fluid figure-img" alt="Conda-Forge: people's princess" width="400"></p>
+</figure>
+</div>
+<p>Conda-Forge is a community-driven collection of Conda packages.</p>
+<p>It’s a fantastic resource for users who require packages not available in the default Anaconda repository. You can access an extensive range of community-contributed packages through Conda-Forge.</p>
+<p><strong>Example</strong>: you have your new shiny Apple Pro macbook and “lucky” enough for it to be on <a href="https://en.wikipedia.org/wiki/Apple_M1">M1 chip</a>. And “lucky” enough to want to run your advanced ML models. Prepare for the trouble.. which we will discuss later :)</p>
+<section id="installation-2" class="level4">
+<h4 class="anchored" data-anchor-id="installation-2">Installation:</h4>
+<p>Add Conda-Forge using this command in your Terminal:</p>
+<p><code>conda config --add channels conda-forge</code>.</p>
+<p>Install packages from Conda-Forge as needed.</p>
+</section>
+<section id="why-conda-forge" class="level4">
+<h4 class="anchored" data-anchor-id="why-conda-forge">Why Conda-Forge</h4>
+<p><strong>The world is not enough</strong>: provides an extensive selection of packages that are not found in the default Anaconda repository.</p>
+<p><strong>Alone we can do so little, together we can do so much</strong>: maintained and contributed to by the Conda community, ensuring up-to-date and well-maintained packages.</p>
+</section>
+<section id="beware-2" class="level4">
+<h4 class="anchored" data-anchor-id="beware-2">Beware:</h4>
+<p><strong>Trust your sources</strong>: while Conda-Forge offers many valuable packages, be aware that they are not officially maintained by Anaconda Inc.&nbsp;Ensure you trust the source of the packages you install.</p>
+<hr>
+</section>
+</section>
+<section id="when-to-use-what-instead-of-boring-summary" class="level3">
+<h3 class="anchored" data-anchor-id="when-to-use-what-instead-of-boring-summary">When to Use What: instead of boring summary</h3>
+<p><strong>Anaconda</strong>:</p>
+<ul>
+<li><p>Choose it for a comprehensive, out-of-the-box data science environment with pre-packaged libraries.</p></li>
+<li><p>Ideal for beginners and those who need a complete solution.</p></li>
+</ul>
+<p><strong>Miniconda</strong>:</p>
+<ul>
+<li>Opt for a lightweight, customizable installation if you want more control over your environment and prefer a minimal footprint.</li>
+</ul>
+<p><strong>Conda-Forge</strong>:</p>
+<ul>
+<li><p>best of its all (yeah, I am a people’s person!)</p></li>
+<li><p>you have a “buggy” setup</p></li>
+<li><p>you need additional packages beyond what’s available in the default Anaconda repository.</p></li>
+</ul>
+</section>
+<section id="stay-on-track" class="level3">
+<h3 class="anchored" data-anchor-id="stay-on-track">Stay on track!</h3>
+<p>In this world of no-commitments, stay tuned for what’s happening and be ready to evolve!</p>
+<p><strong>Latest and greatest</strong>: the latest conda’s news and developments are critical in data science and scientific computing.</p>
+<p><strong>Top security</strong>: Regular updates ensure you benefit from security patches and bug fixes, enhancing the stability of your environment.</p>
+<p><strong>People’s power</strong>: Monitoring the community’s activity around Conda packages can provide insights into the popularity and reliability of specific libraries and tools.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/5.jpeg" class="img-fluid figure-img" alt="Anaconda: The Comprehensive Toolbox" width="400"></p>
 </figure>
 </div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
