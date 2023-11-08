@@ -64,7 +64,7 @@ Download Anaconda from the [official website](https://www.anaconda.com/) and ins
 
 #### Why Anaconda?
 
--   Ginny in a bottle (but big bottle...):
+-   Genie in a bottle (but big bottle...):
 
 **Pre-packaged Libraries**: Anaconda comes with hundreds of pre-installed libraries, including `NumPy`, `pandas`, `scikit-learn`, `Jupyter`, and more, saving you the effort of installing them individually.
 
