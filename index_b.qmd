@@ -9,7 +9,7 @@ title-block-banner: true
 
 ___
 
-Welcome to my page.
+Welcome
 
 I am a data scientist with R and Python under my belt. I love both data wrangling and ML. What else an ML engineer can say.
 
