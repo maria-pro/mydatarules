@@ -84,7 +84,7 @@ We have the following codelists in our DSD:
 
 
 
-```{r}
+```{r eval=FALSE}
 concepts <- as.data.frame(slot(dsd, "concepts"))
 ```
 
@@ -97,7 +97,7 @@ concepts <- as.data.frame(slot(dsd, "concepts"))
 
 `
 
-```{r}
+```{r eval=FALSE}
 
 stats|>summary()
 ```
