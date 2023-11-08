@@ -1,8 +1,10 @@
 ---
-title: "Research"
+title: "Maria Prokofieva"
 image: me2me.png
 about:
-  template: jolla
+  template: broadside
+  image-width: 13em
+  
   links:
     - icon: twitter
       text: Twitter
@@ -15,7 +17,21 @@ about:
       href: https://github.com
 
 ---
-
-Academics should not live in the ivory tower
+ML Engineer | Data Scientist | Academic | Cyberpsychology and Business
 
 Check my [Google Scholar]("https://scholar.google.com/citations?user=mk7IdlsAAAAJ&hl=en&oi=ao")
+
+
+#### Education
+
+PhD in Computer Science |
+Graduate Certificate in Accounting |
+Master in Computer Science |
+Bachelor of Computer Science and Linguistics |
+
+#### Experience
+
+**CPA Australia**: Fellow CPA Australia | Business Analytics Discussion Group
+**R Consortium**: Working Group | RBusiness
+**Senior Lecturer**: Victoria University, Australia
+**Lead Data Scientist**: Mitchell Institute for Policy Development

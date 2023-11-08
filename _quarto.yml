@@ -13,8 +13,7 @@ website:
     right:
       - index.qmd
       - text: "Me"
-        file: index_b.qmd
-      - research.qmd
+        file: research.qmd
       - text: "Meetup"
         href: https://www.meetup.com/r-business/
       - icon: github
