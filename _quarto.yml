@@ -11,9 +11,9 @@ website:
   navbar:
     background: "#f3f4f5"
     right:
-      - index_b.qmd
+      - index.qmd
       - text: "Me"
-        file: index.qmd
+        file: index_b.qmd
       - research.qmd
       - text: "Meetup"
         href: https://www.meetup.com/r-business/

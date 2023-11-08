@@ -86,9 +86,9 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "MyDataRules (MyDR)",
+    "title": "What’s new",
     "section": "",
-    "text": "Welcome to my page.\nI am a data scientist with R and Python under my belt. I love both data wrangling and ML. What else an ML engineer can say.\nBy coincidence I am an ML engineer and academic, so this website is my personal project where I share some of my leisure projects and some snippets of my work project\nI work with clients across the whole domain of data science, starting with\n\nautomated data collection - data wrangling - data storytelling\nto model building and implementation\n\nI am Fellow CPA Australia member and promote the use of data and data tools for business purposes.\nTalk to me if you need advice or guidance and\nOPEN FOR HIRE"
+    "text": "Purpose\n\n\n\n\n\n\n\n\n\n\n \n\n\n\n\n  \n\n\n\n\nPython’s Conda Jungle: a no-brainer from Anaconda to Miniforge\n\n\n\n\n\n\n\npython\n\n\n\n\n\n\n\n\n\n\n\nNov 9, 2023\n\n\nMaria Prokofieva\n\n\n\n\n\n\n  \n\n\n\n\nFitbit in your Google Sheets in 5 min or less\n\n\n\n\n\n\n\ndata\n\n\n\n\n\n\n\n\n\n\n\nOct 30, 2023\n\n\nMaria Prokofieva\n\n\n\n\n\n\n  \n\n\n\n\nCash flow - reconciliation\n\n\n\n\n\n\n\nbusiness\n\n\n\n\n\n\n\n\n\n\n\nOct 30, 2023\n\n\nMaria Prokofieva\n\n\n\n\n\n\n  \n\n\n\n\nWelcome\n\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nOct 24, 2023\n\n\nMaria Prokofieva\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nIntro into LLM\n\n\n\n\n\n\n\ndata\n\n\n\n\n\n\n\n\n\n\n\nSep 2, 2023\n\n\nMaria Prokofieva\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBeautiful Data with Bootstrap and React\n\n\n\n\n\n\n\ndesign\n\n\n\n\n\n\n\n\n\n\n\nAug 5, 2023\n\n\nMaria Prokofieva\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "about.html",
@@ -107,8 +107,8 @@
   {
     "objectID": "index_b.html",
     "href": "index_b.html",
-    "title": "What’s new",
+    "title": "MyDataRules (MyDR)",
     "section": "",
-    "text": "Purpose\n\n\n\n\n\n\n\n\n\n\n \n\n\n\n\n  \n\n\n\n\nPython’s Conda Jungle: a no-brainer from Anaconda to Miniforge\n\n\n\n\n\n\n\npython\n\n\n\n\n\n\n\n\n\n\n\nNov 9, 2023\n\n\nMaria Prokofieva\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBeautiful Data with Bootstrap and React\n\n\n\n\n\n\n\ndesign\n\n\n\n\n\n\n\n\n\n\n\nNov 5, 2023\n\n\nMaria Prokofieva\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nIntro into LLM\n\n\n\n\n\n\n\ndata\n\n\n\n\n\n\n\n\n\n\n\nNov 2, 2023\n\n\nMaria Prokofieva\n\n\n\n\n\n\n  \n\n\n\n\nFitbit in your Google Sheets in 5 min or less\n\n\n\n\n\n\n\ndata\n\n\n\n\n\n\n\n\n\n\n\nOct 30, 2023\n\n\nMaria Prokofieva\n\n\n\n\n\n\n  \n\n\n\n\nCash flow - reconciliation\n\n\n\n\n\n\n\nbusiness\n\n\n\n\n\n\n\n\n\n\n\nOct 30, 2023\n\n\nMaria Prokofieva\n\n\n\n\n\n\n  \n\n\n\n\nWelcome\n\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nOct 24, 2023\n\n\nMaria Prokofieva\n\n\n\n\n\n\nNo matching items"
+    "text": "Welcome to my page.\nI am a data scientist with R and Python under my belt. I love both data wrangling and ML. What else an ML engineer can say.\nBy coincidence I am an ML engineer and academic, so this website is my personal project where I share some of my leisure projects and some snippets of my work project\nI work with clients across the whole domain of data science, starting with\n\nautomated data collection - data wrangling - data storytelling\nto model building and implementation\n\nI am Fellow CPA Australia member and promote the use of data and data tools for business purposes.\nTalk to me if you need advice or guidance and\nOPEN FOR HIRE"
   }
 ]

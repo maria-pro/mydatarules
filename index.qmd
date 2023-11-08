@@ -1,28 +1,16 @@
 ---
-title: ""
-image: bg3.jpeg
+title: "What's new"
+listing:
+  contents: posts
+  sort: "date desc"
+  type: default
+  categories: true
+  sort-ui: false
+  filter-ui: false
 page-layout: full
-title-block-banner: true
+title-block-banner: false
 ---
 
-![](bg3.jpeg){height=400 fig-align="center"}
 
-___
 
-Welcome to my page.
 
-I am a data scientist with R and Python under my belt. I love both data wrangling and ML. What else an ML engineer can say.
-
-By coincidence I am an ML engineer and academic, so this website is my personal project where I share some of my leisure projects and some snippets of my work project
-
-I work with clients across the whole domain of data science, starting with 
-
-- automated data collection - data wrangling - data storytelling 
-
-- to model building and implementation
-
-I am Fellow CPA Australia member and promote the use of data and data tools for business purposes.
-
-Talk to me if you need advice or guidance and 
-
-**OPEN FOR HIRE**
