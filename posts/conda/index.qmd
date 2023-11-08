@@ -3,7 +3,7 @@ title: "Python's Conda Jungle: a no-brainer from Anaconda to Miniforge"
 author: "Maria Prokofieva"
 date: "2023-11-09"
 categories: [python]
-title-block-banner: false
+title-block-banner: false 
 ---
 
 If you are starting with Python you are most likely have a question: should I go straight and just install/use Python or do I need anything else?
