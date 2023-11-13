@@ -1,9 +1,12 @@
 ---
-title: "Maria Prokofieva"
+title: "Maria Prokofieva, PhD"
+pagetitle: "Maria Prokofieva, PhD"
+subtitle: Lead Data Scientist at Mitchell Institute, Australia
 image: me2me.png
 about:
-  template: broadside
-  image-width: 13em
+  template: solana
+  image-width: 25em
+  id: hero-heading
   
   links:
     - icon: twitter
@@ -15,23 +18,40 @@ about:
     - icon: github
       text: Github
       href: https://github.com
+    - text: Google Scholar
+      href: https://scholar.google.com/citations?user=mk7IdlsAAAAJ&hl=en&oi=ao
 
+page-layout: full
+
+execute: 
+  freeze: false
+  echo: false
+  warning: false
+
+header-includes: >
+  <link rel="stylesheet" href="assets/index.css">
+resources:
+  - assets/index.css
 ---
-ML Engineer | Data Scientist | Academic | Cyberpsychology and Business
 
-Check my [Google Scholar]("https://scholar.google.com/citations?user=mk7IdlsAAAAJ&hl=en&oi=ao")
+<br><br>
 
 
-#### Education
+::: {#hero-heading}
 
-PhD in Computer Science |
-Graduate Certificate in Accounting |
-Master in Computer Science |
-Bachelor of Computer Science and Linguistics |
+<br>
 
-#### Experience
+ML Engineer | Data Scientist | Academic | Cyberpsychology and Business <br> 
 
 **CPA Australia**: Fellow CPA Australia | Business Analytics Discussion Group
+
 **R Consortium**: Working Group | RBusiness
-**Senior Lecturer**: Victoria University, Australia
-**Lead Data Scientist**: Mitchell Institute for Policy Development
+
+**Academic**: Victoria University, Australia
+
+
+
+:::
+<!-- hero-heading -->
+
+

@@ -2,17 +2,27 @@ project:
   type: website
   output-dir: docs
 website:
-  title: "MyDataRules (MyDR)"
-  reader-mode: false
+  title: "Maria | MyDataRules"
+  site-url: http://mydatarules.me
+  description: "Data Scientist | Python and R | ML | Interested in all things data | HuggingFace"
   favicon: favicon-16x16.png
   google-analytics: "G-MB64NTVJTB"
   open-graph:
     site-name: MyDataRules
+  comments:
+    utterances:
+      repo: maria-pro/mydatarules
+      label: utterances
+      theme: body-light
+      issue-term: title
+
   navbar:
     background: "#f3f4f5"
     right:
       - index.qmd
       - text: "Me"
+        file: research.qmd
+      - text: "Projects"
         file: research.qmd
       - text: "Meetup"
         href: https://www.meetup.com/r-business/
@@ -21,7 +31,8 @@ website:
       - icon: twitter
         href: https://twitter.com/m45hap
   page-footer:
-    left: "Copyright 2023, Maria Prokofieva"
+    left: >-
+     &#169; 2023, Maria Prokofieva &#8729; Made with [Quarto](https://quarto.org)
     right:
       - text: "Meetup"
         href: https://www.meetup.com/r-business/
@@ -30,9 +41,20 @@ website:
       - icon: twitter
         href: https://twitter.com/m45hap
     background: "#f3f4f5"
+
 format:
   html:
-    theme: litera
+    theme:
+      light:
+        - cosmo
+
+      dark:
+        - cosmo
+    code-link: true
+    pagetitle: "{{< meta title >}} | Maria | MyDataRules"
+
+execute:
+  freeze: auto
 
 
 

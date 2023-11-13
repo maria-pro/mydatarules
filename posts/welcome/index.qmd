@@ -2,7 +2,7 @@
 title: "Welcome"
 author: "Maria Prokofieva"
 date: "2023-10-24"
-categories: [news]
+categories: [business]
 title-block-banner: false
 ---
 
